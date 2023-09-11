@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/timeline.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -21,6 +22,31 @@ class ProfilePage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+
+
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Container(
+                    height: 100,
+                    width: double.infinity,
+                    color: Colors.deepPurple,
+                  ),
+
+                  Positioned(
+                      bottom: -20,
+                      right: 0,
+                      left: 0,
+                      child: CircleAvatar(
+                        radius: 30,
+                        backgroundColor: Colors.redAccent,
+                      )
+                  )
+
+                ],
+              ),
+
+              SizedBox(height: 20),
 
               Row(
                 children: [
@@ -52,7 +78,12 @@ class ProfilePage extends StatelessWidget {
                             ),
                             backgroundColor: Colors.green,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const CustomListScreen(),
+                              ),);
+                          },
                           child: const Text(
                             "Edit Profile",
                             style: TextStyle(color: Colors.white),
