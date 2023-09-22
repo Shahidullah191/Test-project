@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/card_view.dart';
+import 'package:test_project/finance.dart';
+import 'package:test_project/profile_page.dart';
+import 'package:test_project/reward.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
@@ -333,6 +343,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+
     );
   }
 }
